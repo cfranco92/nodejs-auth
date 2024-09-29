@@ -20,6 +20,14 @@ class UserService {
     return rta;
   }
 
+  async findByEmail(email) {
+    const user = await models.User.findOne({ where: { email } });
+    if (!user) {
+      throw boom.notFound('user not found');
+    }
+    return user;
+  }
+
   async findOne(id) {
     const user = await models.User.findByPk(id);
     if (!user) {
