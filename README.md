@@ -3,3 +3,5 @@
 * docker-compose up -d pgadmin
 
 * npm run migrations:run
+
+* npm run dev
